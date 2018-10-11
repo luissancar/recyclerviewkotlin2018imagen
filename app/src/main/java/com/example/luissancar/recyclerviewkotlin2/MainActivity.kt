@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import kotlinx.android.synthetic.main.activity_datos.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -34,9 +35,24 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun botonPulsado(v: View){
+
+        addDatos2()
+        recyclerViewMain.adapter = DatosAdapter(datos, this)
+    }
+
     fun addDatos(){
-        for (i in 1..100) {
+
+        for (i in 1..2) {
             var reg: registro=registro("dato A " + i.toString(),"dato B " + i.toString(),"http://gcba.github.io/iconos/Iconografia_PNG/arbol.png")
+            datos.add(reg)
+        }
+
+    }
+    fun addDatos2(){
+        for (i in 1..2) {
+            println("aaaaaafffffffffffffffffffffff")
+            var reg: registro=registro("nuevo A " + i.toString(),"nuevo B " + i.toString(),"http://gcba.github.io/iconos/Iconografia_PNG/auto.png")
             datos.add(reg)
         }
 
